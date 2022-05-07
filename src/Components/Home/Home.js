@@ -1,9 +1,11 @@
 import React from "react";
+import banner from "../../images/books1.png";
+import "./Home.css";
 
 const Home = () => {
   return (
     <div>
-      <h1>home</h1>
+      <img src={banner} alt="" />
     </div>
   );
 };
