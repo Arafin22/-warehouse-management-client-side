@@ -28,6 +28,11 @@ const InventoryNavber = () => {
                   Manage Inventory
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/myitem">
+                  My Item
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

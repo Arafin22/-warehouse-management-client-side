@@ -47,6 +47,25 @@ const Navbar = () => {
                   Register
                 </Link>
               </li>
+              <span>
+                {user ? (
+                  <spam>
+                    {user.email}
+                    <button
+                      className="btn btn-link"
+                      onClick={() => signOut(auth)}
+                    >
+                      Sign Out
+                    </button>
+                  </spam>
+                ) : (
+                  //  <spam>{user.displayName}
+                  //  <button className='btn btn-link' onClick={()=> signOut(auth)}>Sign Out</button>
+                  //  </spam>
+
+                  "USER"
+                )}
+              </span>
             </ul>
           </div>
         </div>

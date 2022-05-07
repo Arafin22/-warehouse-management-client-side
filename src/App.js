@@ -3,10 +3,13 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
+
+import EditProduct from "./Components/Products/EditProduct/EditProduct";
+
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
-import EditProduct from "./Components/Products/EditProduct/EditProduct";
 import ManageInventory from "./Components/ManageInventory/ManageInventory";
+import MyItem from "./Components/MyItem/MyItem";
 
 function App() {
   return (
@@ -17,8 +20,9 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="product/:id" element={<EditProduct />} />
         <Route path="manageinventory" element={<ManageInventory />} />
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Register />}></Route>
+        <Route path="myitem" element={<MyItem />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
       </Routes>
     </div>
   );
