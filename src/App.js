@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 import EditProduct from "./Components/Products/EditProduct/EditProduct";
 
@@ -10,20 +11,29 @@ import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import ManageInventory from "./Components/ManageInventory/ManageInventory";
 import MyItem from "./Components/MyItem/MyItem";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App mb-5">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
-        <Route path="product/:id" element={<EditProduct />} />
+        <Route
+          path="product/:id"
+          element={
+            <PrivateRoute>
+              <EditProduct />
+            </PrivateRoute>
+          }
+        />
         <Route path="manageinventory" element={<ManageInventory />} />
         <Route path="myitem" element={<MyItem />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

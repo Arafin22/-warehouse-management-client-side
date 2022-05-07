@@ -68,7 +68,7 @@ const ManageInventory = () => {
   };
 
   return (
-    <div>
+    <div className="mb-5">
       <InventoryNavber></InventoryNavber>
       <h1 className="mx-auto text-center">Products Table</h1>
       <table class="table">
@@ -109,7 +109,7 @@ const ManageInventory = () => {
 
       <hr />
 
-      <div>
+      <div className="mb-5">
         <h1 className="text-center text-primary">Upoload Products</h1>
         <div className="w-50 mx-auto">
           <form onSubmit={handelUpload}>
@@ -156,7 +156,6 @@ const ManageInventory = () => {
           </form>
         </div>
       </div>
-      {/* <UploadProduct></UploadProduct> */}
     </div>
   );
 };

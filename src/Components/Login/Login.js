@@ -37,7 +37,7 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
 
   if (userinfo) {
-    const url = "https://fast-scrubland-97569.herokuapp.com/login";
+    const url = "http://localhost:5000/login";
 
     fetch(url, {
       method: "POST",

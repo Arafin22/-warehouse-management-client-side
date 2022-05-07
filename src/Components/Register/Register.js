@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useCreateUserWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { List } from "react-content-loader";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -25,10 +28,31 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
+  const [userinfo, userloading, usererror] = useAuthState(auth);
+
   const navigate = useNavigate();
   const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
+
+  if (userinfo) {
+    const url = "http://localhost:5000/login";
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: userinfo.email,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.token);
+        navigate(from, { replace: true });
+      });
+  }
   // if (error) {
   //   return (
   //     <div>
