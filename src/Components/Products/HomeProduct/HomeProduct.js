@@ -13,9 +13,9 @@ const HomeProduct = () => {
   const hendelDelevery = (product) => {};
 
   return (
-    <div className="row">
+    <div className="row mt-5">
       {products.slice(0, 4).map((pd) => (
-        <div className="col-4 g-4" key={pd._id}>
+        <div className="col-sm-12 col-md-4 mt-3 mb-5" key={pd._id}>
           <SingleProduct pd={pd}></SingleProduct>
         </div>
       ))}
