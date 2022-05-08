@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/Firebase.init";
-import InventoryNavber from "../Navbar/InventoryNavber";
 
 const MyItem = () => {
   const [adduserproduct, setAdduserproduct] = useState([]);
   const [userinfo, userloading, usererror] = useAuthState(auth);
+  const [isReload, setIsreload] = useState(false);
 
   console.log(adduserproduct);
   useEffect(() => {
@@ -18,10 +18,10 @@ const MyItem = () => {
     })
       .then((res) => res.json())
       .then((data) => setAdduserproduct(data));
-  }, []);
+  }, [!isReload]);
   return (
     <div>
-      <InventoryNavber></InventoryNavber>
+      {/* <InventoryNavber></InventoryNavber> */}
 
       <h1 className="mx-auto text-center">Products Table</h1>
       <table class="table">

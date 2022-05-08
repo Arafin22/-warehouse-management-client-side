@@ -38,7 +38,15 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="myitem" element={<MyItem />} />
+        <Route
+          path="myitem"
+          element={
+            <PrivateRoute>
+              <MyItem />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Routes>
