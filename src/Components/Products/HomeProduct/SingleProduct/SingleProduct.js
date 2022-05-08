@@ -13,13 +13,14 @@ const SingleProduct = (props) => {
   return (
     <div className="">
       <div className="product-container">
-        <h5 className="">Name: {name}</h5>
-        <h5 className="">description: {description}</h5>
+        <h5 className="mt-1">Name: {name}</h5>
+        <hr />
+        <h6 className="">description: {description}</h6>
         <h5 className="">supplier: {supplier}</h5>
-        <h5 className="">description: {description}</h5>
+
         <img className="home-product-img" src={image} />
 
-        <h6 className="">Price : {price}</h6>
+        <h6 className="text-success mt-2">Price : {price}</h6>
 
         <Link to={`/product/${_id}`}>
           <button onClick={hendelDelevery} className="btn btn-link">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/Firebase.init";
-import InventoryNavber from "../Navbar/InventoryNavber";
+// import InventoryNavber from "../Navbar/InventoryNavber";
 import "./ManageInventory.css";
 
 const ManageInventory = () => {
@@ -69,7 +69,7 @@ const ManageInventory = () => {
 
   return (
     <div className="mb-5">
-      <InventoryNavber></InventoryNavber>
+      {/* <InventoryNavber></InventoryNavber> */}
       <h1 className="mx-auto text-center">Products Table</h1>
       <table class="table">
         <thead>
@@ -155,6 +155,9 @@ const ManageInventory = () => {
             </button>
           </form>
         </div>
+      </div>
+      <div className="mb-5">
+        <hr />
       </div>
     </div>
   );

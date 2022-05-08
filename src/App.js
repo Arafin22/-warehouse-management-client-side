@@ -12,6 +12,7 @@ import Login from "./Components/Login/Login";
 import ManageInventory from "./Components/ManageInventory/ManageInventory";
 import MyItem from "./Components/MyItem/MyItem";
 import Footer from "./Components/Footer/Footer";
+import Blogs from "./Components/Blogs/Blogs";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
+        <Route path="blogs" element={<Blogs></Blogs>}></Route>
         <Route
           path="product/:id"
           element={
@@ -28,7 +30,14 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="manageinventory" element={<ManageInventory />} />
+        <Route
+          path="manageinventory"
+          element={
+            <PrivateRoute>
+              <ManageInventory />
+            </PrivateRoute>
+          }
+        />
         <Route path="myitem" element={<MyItem />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />

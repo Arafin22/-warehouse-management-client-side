@@ -6,7 +6,9 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useNavigate, useLocation } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+
+// import { toast, ToastContainer } from "react-toastify";
 import auth from "../../Firebase/Firebase.init";
 
 const Login = () => {
