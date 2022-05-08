@@ -12,7 +12,7 @@ const ManageInventory = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://secret-badlands-52528.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [isReload]);
@@ -20,7 +20,7 @@ const ManageInventory = () => {
   const heandelDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/manageinventory/${id}`;
+      const url = `https://secret-badlands-52528.herokuapp.com/manageinventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -42,7 +42,7 @@ const ManageInventory = () => {
     const email = userinfo.email;
     console.log(name, price);
 
-    fetch("http://localhost:5000/uploadpd", {
+    fetch("https://secret-badlands-52528.herokuapp.com/uploadpd", {
       method: "POST",
       body: JSON.stringify({
         name,

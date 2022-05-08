@@ -11,7 +11,7 @@ const EditProduct = () => {
   // console.log(product);
   // const udproduct =product.quantity;
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://secret-badlands-52528.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [isReload]);
@@ -23,7 +23,7 @@ const EditProduct = () => {
 
     const quantity = storeQuantity + newQuantity;
     if (quantity > 0) {
-      fetch(`http://localhost:5000/product/${id}`, {
+      fetch(`https://secret-badlands-52528.herokuapp.com/product/${id}`, {
         method: "PUT",
 
         headers: {
@@ -50,7 +50,7 @@ const EditProduct = () => {
 
     // setProduct(...product,newQuantity-1);
 
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://secret-badlands-52528.herokuapp.com/product/${id}`, {
       method: "PUT",
 
       headers: {

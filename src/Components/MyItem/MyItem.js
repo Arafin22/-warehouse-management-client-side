@@ -9,7 +9,7 @@ const MyItem = () => {
 
   console.log(adduserproduct);
   useEffect(() => {
-    fetch("http://localhost:5000/myitem", {
+    fetch("https://secret-badlands-52528.herokuapp.com/myitem", {
       headers: {
         authorization: `${userinfo.email} ${localStorage.getItem(
           "accessToken"

@@ -39,7 +39,7 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
 
   if (userinfo) {
-    const url = "http://localhost:5000/login";
+    const url = "https://secret-badlands-52528.herokuapp.com/login";
 
     fetch(url, {
       method: "POST",
